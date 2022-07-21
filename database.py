@@ -128,6 +128,7 @@ cur.execute(postgreSQL_select_Query)
 records = cur.fetchall()
 logging.info('fetched the record in the fact table where genreid = 5' + str(records))
 
+# commit code to database
 conn.commit()
 
 # close connection once finished
