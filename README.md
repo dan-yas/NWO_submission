@@ -24,18 +24,18 @@ requests  <br>
 
 I chose a star schematic with dim tables having foreign keys to a centralized fact table. The fact table contains unique movie data   <b> per movie </b>. For example, the movie's title, the movie's image, etc. However, for things such as Release Year (where two movies can be released on the same year), there is a dimension table. See the schematic below. 
 
-<img src="database_relational_diag.png" alt="Database Schematic" title="Star Schematic of Database ">
+<img src="images/database_relational_diag.png" alt="Database Schematic" title="Star Schematic of Database ">
 
 # System Architecture 
 
 The architecture is based on two pipelines one that exports to a compressed csv and the other which adds the data to a postgres database configured with docker. 
-<img src="architecture.png" alt="Database Schematic" title="Star Schematic of Database ">
+<img src="images/architecture.png" alt="Database Schematic" title="Star Schematic of Database ">
 
 # Data Frame Schema
 
 Pre-normalized data saved in a CSV file from pandas data frame.
 
-<img src="csv_schematic.png" alt="Dataframe in pandas" title="Pandas Data Frame ">
+<img src="images/csv_schematic.png" alt="Dataframe in pandas" title="Pandas Data Frame ">
 
 ## Possible improvements and limitations
 
@@ -47,7 +47,7 @@ One possible imporvement would be to have many-to-many tables for genre and for 
 
 
 
-<img src="improvement.png" title="Possible improvement ">
+<img src="images/improvement.png" title="Possible improvement ">
 
 ```
 # Idea: Expand actors per movie and genres per movie rather than a whole cast/ full genre set expand and recreate facts table with this data using intermediary tables.
