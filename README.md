@@ -1,4 +1,4 @@
-# NWO IMBD Case Study 
+# NWO IMDB Case Study 
 ### Daniel Yassky
 
 ### To Run
