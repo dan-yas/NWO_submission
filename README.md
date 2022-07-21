@@ -7,7 +7,7 @@ docker-compose -f docker-compose.yaml up
 python3 data_extract.py
 python3 database.py
 ```
-
+Note: Since data is committed to the database every run, might need to delete database before running python3 database.py again.
 
 ## Logs
 See checks and validation of dataframe in the data_extract.py file
