@@ -36,7 +36,6 @@ cur.execute("create table landing.rawdata( Title TEXT, Release_Year date, Genre 
             Directors TEXT, Stars TEXT, Synopsis TEXT, Runtime float, MPAA TEXT, image_url \
             TEXT, Score float);")
 
-
 #load raw data from transformed csv file to postgres database based on csv col names
 cwd = str(os.getcwd()) + '/movies_by_genre_fin.csv'
 print(cwd)
