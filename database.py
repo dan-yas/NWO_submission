@@ -38,10 +38,11 @@ cur.execute("create table landing.rawdata( Title TEXT, Release_Year date, Genre 
 
 
 #load raw data from transformed csv file to postgres database based on csv col names
-cwd = os.getcwd()
-print
-# cur.execute("COPY landing.rawdata FROM " + cwd + "movies_by_genre_prefin.csv' DELIMITER ',' CSV HEADER;")
-cur.execute("COPY landing.rawdata FROM '/Users/dannyy/Desktop/Yassky_Daniel_NWO_Submission/movies_by_genre_fin.csv' DELIMITER ',' CSV HEADER;")
+cwd = str(os.getcwd()) + '/movies_by_genre_fin.csv'
+print(cwd)
+print('/Users/dannyy/Desktop/Yassky_Daniel_NWO_Submission/movies_by_genre_fin.csv')
+cur.execute("COPY landing.rawdata FROM '"  + cwd + "' DELIMITER ',' CSV HEADER;")
+# cur.execute("COPY landing.rawdata FROM '/Users/dannyy/Desktop/Yassky_Daniel_NWO_Submission/movies_by_genre_fin.csv' DELIMITER ',' CSV HEADER;")
 
 # add index primary key (id) to serialize the raw data in landing.rawdata table
 cur.execute("alter table landing.rawdata add id serial;")
