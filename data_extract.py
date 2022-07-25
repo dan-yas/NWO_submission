@@ -111,13 +111,6 @@ def movImage(image):
     except:
         return ''
 
-def movImageId(image):
-    try:
-        return image.get('data-tconst')
-    except:
-        return ''
-
-
 # gets number from text
 def find_number(text):
     num = re.findall(r'[0-9]+',text)
@@ -167,7 +160,6 @@ def main(imdb_url):
         # MPAA
         mov_mpaa.append(str(movMPAA(meta)))
                
-
         #Score 
         imbd_score.append(movScore(movie))
 
@@ -191,19 +183,25 @@ df = pd.DataFrame({
 
 })
 
+# Validation 
 logging.info(df.head())
+
+logging.info(df.dtypes)
 
 #more cleanup for movie release year and runtime
 df['Release_Year']=df['Release_Year'].apply(lambda x: find_number(x))
 df['Runtime']=df['Runtime'].apply(lambda x: find_number(x))
 
+
 # converts Release_Year to date variable
 df['Release_Year'] = pd.to_datetime(df['Release_Year'], format='%Y')
 
 
-logging.info('--------- Download Complete CSV Formed --------')
+# Validation 
+logging.info(df.head())
+# see types of every column 
+logging.info(df.dtypes)
 
-# movie.to_csv('file.csv', index=False) : If you want to store the file.
 file = df.to_csv("movies_by_genre_fin.csv", index = False)
 
 zipCSV = ZipFile("movies_by_genre_fin.zip", 'w')
