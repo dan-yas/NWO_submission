@@ -1,6 +1,18 @@
 # NWO IMDB Case Study 
 ### Daniel Yassky
 
+### Scenario
+You are working for nwo.ai as a Data Engineer on the Data Acquisition & Warehouse
+Team. Your objective is to acquire and operationalize data relating to the movie industry
+in the U.S. You have been tasked with architecting and developing an ETL pipeline that
+extracts the top 50 movies and associated metadata from the list of "Top Rated English
+Movies by Genre" (THIS link provides the genre list).
+Design Constraints
+
+1) Language is python
+2) File type is compressed csv
+3) Database is Postgres
+
 ### To Run
 ```
 docker-compose -f docker-compose.yaml up
